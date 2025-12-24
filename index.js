@@ -3,11 +3,11 @@ const app= express();
 
 //express-session
 const session= require('express-session')
-app.use(session({
-    secret:'mysecret123',
-    resave: false,
-    saveUninitialized: true 
-}))
+// app.use(session({
+//     secret:'mysecret123',
+//     resave: false,
+//     saveUninitialized: true 
+// }))
 
 
 const bodyParser= require('body-parser')
