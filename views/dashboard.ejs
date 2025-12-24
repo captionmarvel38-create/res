@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        /* ====== GLOBAL ====== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+/* ====== CONTAINER ====== */
+.dashboard-container {
+    width: 100%;
+    max-width: 1100px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ====== TITLE ====== */
+.dashboard-container h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 32px;
+    color: #333;
+}
+
+/* ====== TABLE ====== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* Header */
+th {
+    background: #2d3436;
+    color: #fff;
+    padding: 15px;
+    font-size: 16px;
+    text-align: left;
+}
+
+/* Table Rows */
+td {
+    padding: 14px;
+    color: #333;
+    background: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Row hover effect */
+tr:hover td {
+    background: #eaeaea;
+}
+
+/* Even row color */
+tbody tr:nth-child(even) td {
+    background: #f1f1f1;
+}
+
+/* Status label styles */
+.status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+}
+
+/* Different statuses — customize as needed */
+.status.pending {
+    background: #f1c40f;
+}
+
+.status.completed {
+    background: #27ae60;
+}
+
+.status.canceled {
+    background: #e74c3c;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+    th, td {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .dashboard-container {
+        padding: 15px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+    <h1>Dashboard</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>Phone No#</th>
+                <th>Address</th>
+                <th>Status</th>
+                <th>Total Amount</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% result.map(dashboard => { %>
+            <tr>
+                <td><%= dashboard.first_name %></td>
+                <td><%= dashboard.last_name %></td>
+                <td><%= dashboard.phone %></td>
+                <td><%= dashboard.address %></td>
+                <td>
+                    <span >
+                        <%= dashboard.status %>
+                    </span>
+                </td>
+                <td><%= dashboard.total_amount %></td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

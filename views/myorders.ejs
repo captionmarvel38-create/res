@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ===== Global Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f6f8;
+    padding: 30px;
+}
+
+/* ===== Page Title ===== */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 32px;
+    color: #222;
+}
+
+/* ===== Orders Container ===== */
+.order {
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ===== Single Order Card ===== */
+.order-card {
+    background: #ffffff;
+    padding: 18px 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border-left: 6px solid #3498db;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Text inside card */
+.order-card p {
+    font-size: 16px;
+    color: #444;
+    margin: 0;
+}
+
+/* Order ID highlight */
+.order-card p.order-id {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+}
+
+/* ===== Buttons ===== */
+.order-card button {
+    background: #e74c3c;
+    border: none;
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    width: 150px;
+    transition: 0.3s ease;
+}
+
+.order-card button:hover {
+    background: #c0392b;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+    .order-card {
+        padding: 15px;
+    }
+
+    .order-card button {
+        width: 100%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <h1>My Orders</h1>
+
+<div class="order">
+    <% result.map(order => { %>
+        <div class="order-card">
+            <p class="order-id">Order #<%= order.order_id %></p>
+            <p>Status: <%= order.status %></p>
+
+            <form action="/order/cancel" method="post">
+                <input type="hidden" name="orderid" value="<%= order.order_id %>">
+                <button type="submit">Cancel Order</button>
+            </form>
+        </div>
+    <% }) %>
+</div>
+
+</body>
+</html>

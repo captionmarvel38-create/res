@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart Items</title>
+    <style>
+        /* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Page Layout */
+body {
+    background: #f8f8f8;
+    padding: 20px;
+}
+
+/* Order Item Container */
+.order-card {
+    width: 100%;
+    max-width: 900px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin: 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Dish Name */
+.order-card h3 {
+    font-size: 22px;
+    color: #333;
+}
+
+/* Price */
+.order-card h4 {
+    font-size: 20px;
+    color: #222;
+    margin-left: 20px;
+}
+
+/* Delete Button */
+.delete-btn {
+    padding: 8px 15px;
+    background: #ff4b4b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.delete-btn:hover {
+    background: #e30000;
+}
+
+/* Total Price Box */
+.total-box {
+    width: 220px;
+    padding: 15px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.total-box h2 {
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.total-box hr {
+    margin: 8px 0;
+}
+
+/* Confirm Button */
+.confirm-btn {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    width: 220px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.confirm-btn:hover {
+    background: #3c9f44;
+}
+
+/* List Removal Default */
+ul {
+    list-style: none;
+}
+</style>
+</head>
+<body>
+    
+  
+    <% let total = 0; %>
+    <% let order_id = result[0]?.order_id %>
+    <ul>
+    <% result.map(order=>{%>
+    <div id="order_detail" class="order-card">
+<li>
+    
+    <h3><%=order?.dish_name%></h3>
+    <h4><%=order?.dish_price%></h4>
+    <% total += order?.dish_price; %><br>
+    
+</div>
+    </li>
+   <% })%>
+   </ul>
+   <div id="total_price" class="total-box">
+    <h2>Total Price</h2>
+    <hr>
+   <h2><%= total %> </h2>
+   </div>
+   
+    <form action="/cart/confirm" method="post">
+        <input type="hidden" name="total" value="<%=order_id%>">
+        <button type="submit" id="confirmOrder" class="confirm-btn">Confirm Order</button>
+    </form>
+   
+  
+</body>
+</html>

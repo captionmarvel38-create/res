@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" id="tittle-image" href="data:image/png;base64,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" sizes="13">
+    <title>Restaurant | Home</title>
+    <style>
+/* ---------------- GLOBAL RESET ---------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+#tittle-image{
+    border-radius: 5px;
+}
+body {
+    background: #fafafa;
+    color: #222;
+}
+
+/* ---------------- NAVBAR ---------------- */
+nav {
+    width: 100%;
+    background: white;
+    padding: 18px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+nav h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ff5e2d;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 17px;
+    color: #333;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff5e2d;
+}
+
+/* ---------------- HERO SECTION ---------------- */
+.hero {
+    width: 100%;
+    height: 70vh;
+    background: url("https://images.unsplash.com/photo-1544025162-d76694265947?w=1600&q=80") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    color: white;
+    text-align: center;
+    max-width: 700px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 55px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.hero-content a {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #ff5e2d;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s ease;
+}
+
+.hero-content a:hover {
+    background: #e04918;
+}
+
+/* ---------------- CATEGORY SECTION ---------------- */
+.category-section {
+    padding: 40px 60px;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.categories {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.category-box {
+    width: 180px;
+    height: 180px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 10px;
+    cursor: pointer;
+    background: #fff;
+    transition: 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.category-box:hover {
+    transform: translatey(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+}
+
+.category-box img {
+    width: 100%;
+    height: 65%;
+    object-fit: cover;
+}
+
+.category-box p {
+    text-align: center;
+    padding: 10px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* ---------------- DISH LIST ---------------- */
+.dishes-section {
+    padding: 40px 60px;
+}
+
+.dish-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-gap: 22px;
+}
+
+.dish-card {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.07);
+    transition: 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.dish-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.dish-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.dish-card h2 {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.dish-card h3 {
+    font-size: 18px;
+    color: #444;
+}
+
+/* Order button */
+.dish-card button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    background: #ff5e2d;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 17px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.dish-card button:hover {
+    background: #e04918;
+}
+
+/* ---------------- FOOTER ---------------- */
+footer {
+    background: #111;
+    color: #bbb;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+    </style>
+</head>
+
+<body>
+<!-- ---------------- NAVBAR ---------------- -->
+<nav>
+    <h1>FastFood</h1>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="/cart">Cart</a></li>
+        <li><a href="/myOrders">My orders</a></li>
+        <li><a href="/login" id="login">Login</a></li>
+    </ul>
+</nav>
+
+<!-- ---------------- HERO SECTION ---------------- -->
+<div class="hero">
+    <div class="hero-content">
+        <h1>Fresh, Delicious & Delivered Fast</h1>
+        <p>Order from the best chefs in town. Taste the difference.</p>
+        <a href="#menu">Explore Menu</a>
+    </div>
+</div>
+
+<!-- ---------------- CATEGORIES ---------------- -->
+<div class="category-section">
+    <h2 class="section-title">Browse Categories</h2>
+
+    <div class="categories">
+        <div class="category-box">
+            <img src="https://plus.unsplash.com/premium_photo-1694506374847-ced565472398?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aW5kaWFuJTIwZm9vZHxlbnwwfHwwfHx8MA%3D%3D" alt="">
+            <p>Indian</p>
+        </div>
+
+        <div class="category-box">
+            <img src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZmFzdCUyMGZvb2R8ZW58MHx8MHx8fDA%3D" alt="">
+            <p>Fast Food</p>
+        </div>
+
+        <div class="category-box">
+            <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hpbmVzZSUyMGZvb2R8ZW58MHx8MHx8fDA%3D" alt="">
+            <p>Chinese</p>
+        </div>
+
+        <div class="category-box">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400" alt="">
+            <p>Italian</p>
+        </div>
+
+        <div class="category-box">
+            <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?w=400" alt="">
+            <p>Desserts</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- ---------------- DISHES SECTION ---------------- -->
+<div class="dishes-section" id="menu">
+    <h2 class="section-title">Popular Dishes</h2>
+
+    <div class="dish-grid"> 
+        <% result.map(dish => { %>
+            <div class="dish-card">
+    <img src="<%= dish.image_url %>" />
+    
+    <h2 class="dish-name-cls"><%= dish.dish_name %></h2>
+    <h3>Rs: <%= dish.dish_price %></h3>
+    
+    <form action="/order" method="post">
+        <input type="hidden" name="Dish_id" value="<%=dish.dish_id%>">
+        <button type="submit">Add to card</button>
+    </form>
+</div>
+        <% }) %>
+    </div>
+</div>
+
+<!-- ---------------- FOOTER ---------------- -->
+<footer>
+    © 2025 FastFood — All rights reserved.
+</footer>
+
+
+<script>
+    let orderdishes = [];
+    const dishGrid = document.querySelector('.dish-grid');
+
+    dishGrid.addEventListener('click', event => {
+        
+        // Check if the clicked element is an 'Add to Cart' button
+        if (event.target.classList.contains('add-to-cart-btn')) {
+            
+            const clickedButton = event.target;
+            
+            // Access the unique data directly from the button's dataset
+            const dishId = clickedButton.dataset.id;
+            const dishName = clickedButton.dataset.name;
+            const dishPrice = clickedButton.dataset.price;
+            
+            // Now you have all unique information for the clicked item
+            const item = {
+                id: dishId,
+                name: dishName,
+                price: dishPrice
+            };
+            
+            orderdishes.push(item);
+            
+            // Log the unique ID and the full item object
+            console.log("Dish ID added:", dishId);
+            console.log("Current order:", orderdishes);
+        }
+    });
+
+    // Login  or Logout
+    let login=document.getElementById('login')
+    if(!req.session.user){
+        login.textContent='login'
+    }
+    else{
+        login.textContent='log Out'
+    }
+</script>
+</body>
+</html>
